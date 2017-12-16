@@ -1,5 +1,6 @@
 .page {
-    margin: 20px;
+    margin: auto auto;
+    width: 65%;
 }
 
 .interactions {
@@ -12,10 +13,10 @@
 
 .table-header {
     display: flex;
+    justify-content: center;    
     line-height: 24px;
     font-size: 16px;
     padding: 0 10px;
-    justify-content: space-between;
 }
 
 .table-empty {
@@ -26,6 +27,7 @@
 
 .table-row {
     display: flex;
+    justify-content: center;
     line-height: 24px;
     white-space: nowrap;
     margin: 10px 0;
@@ -53,6 +55,7 @@
     text-align: inherit;
     -webkit-font-smoothing: inherit;
     padding: 0;
+    margin-left: 0;
     font-size: inherit;
     cursor: pointer;
 }

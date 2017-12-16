@@ -62,10 +62,7 @@ class Table extends Component {
   }
 
   render() {
-    const {
-      list,
-      onDismiss
-    } = this.props;
+    const { list } = this.props;
 
     const {
       sortKey,
@@ -116,9 +113,9 @@ class Table extends Component {
               Points
             </Sort>
           </span>
-          <span style={ smallColumn }>
+          {/* <span style={ smallColumn }>
             Archive
-          </span>
+          </span> */}
         </div>
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">
@@ -133,14 +130,6 @@ class Table extends Component {
             </span>
             <span style={smallColumn}>
               {item.points}
-            </span>
-            <span style={smallColumn}>
-              <Button
-                onClick={() => onDismiss(item.objectID)}
-                className="button-inline"
-              >
-                Dismiss
-            </Button>
             </span>
           </div>
         )}
@@ -158,8 +147,7 @@ Table.propTypes = {
       num_comments: PropTypes.number,
       points: PropTypes.number,
     })
-  ).isRequired,
-  onDismiss: PropTypes.func.isRequired,
+  ).isRequired
 };
 
 export default Table;

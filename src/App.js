@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
 import Table from './components/Table';
 import Search from './components/Search';
 import { Button } from './components/Button';
-import './App.css';
+import './css/App.css';
 
 import fetch from 'isomorphic-fetch';
 
@@ -94,17 +95,16 @@ class App extends Component {
     }
     event.preventDefault();
   }
-
+  
+  onSearchChange(event) {
+    this.setState({ searchTerm: event.target.value });
+  }
+  
   componentDidMount() {
     const { searchTerm } = this.state;
     this.setState({ searchKey: searchTerm })
     this.fetchSearchTopStories(searchTerm);
   }
-
-  onSearchChange(event) {
-    this.setState({ searchTerm: event.target.value });
-  }
- 
 
   render() {
     const {
@@ -130,13 +130,11 @@ class App extends Component {
     return (
       <div className="page">
         <div className="interactions">
-          <Search 
-            value={searchTerm}
-            onChange={this.onSearchChange}
-            onSubmit={this.onSearchSubmit}
-          >
-            Search
-          </Search>
+          <Header
+              value={searchTerm}
+              onChange={this.onSearchChange}
+              onSubmit={this.onSearchSubmit}
+          />
         </div>
         { error
           ? <div className="interactions">
@@ -159,7 +157,7 @@ class App extends Component {
 }
 
 const Loading = () => (
-  <div>Loading... </div>
+  <div className="spinner"></div>
 );
 
 const withLoading = (Component) => ({ isLoading, ...rest }) => (

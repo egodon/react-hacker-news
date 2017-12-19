@@ -1,4 +1,4 @@
-export const DEFAULT_HPP = '20';
+export const DEFAULT_HPP = '30';
 export const PATH_BASE = 'https://hn.algolia.com/api/v1';
 export const PATH_SEARCH = '/search';
 export const PATH_TAGS = 'tags=';

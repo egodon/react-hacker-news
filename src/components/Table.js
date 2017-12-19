@@ -8,9 +8,7 @@ import classNames from 'classnames';
 const largeColumn = {
   width: '40%',
 };
-const midColumn = {
-  width: '30%',
-};
+
 const smallColumn = {
   width: '10%',
 };
@@ -86,7 +84,7 @@ class Table extends Component {
               Title
             </Sort>
           </span>
-          <span style={ midColumn }>
+          <span style={ smallColumn }>
             <Sort
               sortKey={'AUTHOR'}
               onSort={this.onSort}
@@ -122,7 +120,7 @@ class Table extends Component {
             <span style={largeColumn}>
               <a href={item.url}>{item.title}</a>
             </span>
-            <span style={midColumn}>
+            <span style={smallColumn}>
               {item.author}
             </span>
             <span style={smallColumn}>

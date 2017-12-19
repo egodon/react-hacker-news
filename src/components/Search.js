@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+const searchBtn = {
+  color: '#fff'
+}
+
 class Search extends Component {
   componentDidMount() {
     this.input.focus();
@@ -9,8 +13,7 @@ class Search extends Component {
     const {
       value,
       onChange,
-      onSubmit,
-      children
+      onSubmit
     } = this.props;
 
     return (
@@ -21,8 +24,8 @@ class Search extends Component {
           onChange={onChange}
           ref={(node) => { this.input = node; }}
         />
-        <button type="submit">
-          {children}
+        <button type="submit" style={searchBtn}>
+          Search
         </button>
       </form>
     );

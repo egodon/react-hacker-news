@@ -117,14 +117,14 @@ class Table extends Component {
         </div>
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">
-            <span style={largeColumn}>
+            <span style={largeColumn} className="title">
               <a href={item.url}>{item.title}</a>
             </span>
             <span style={smallColumn}>
               {item.author}
             </span>
             <span style={smallColumn}>
-              {item.num_comments}
+              <a href={`https://news.ycombinator.com/item?id=${item.objectID}`}>{item.num_comments}</a>
             </span>
             <span style={smallColumn}>
               {item.points}

@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Table from './components/Table';
 import Search from './components/Search';
 import { Button } from './components/Button';
-import './css/App.css';
 
 import fetch from 'isomorphic-fetch';
 

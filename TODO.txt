@@ -1,2 +1,0 @@
-Fix item.objectKey's
-Limit query to 20 hits

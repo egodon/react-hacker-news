@@ -4,13 +4,14 @@ import Search from './Search';
 const headerStyle = {
   background: '#ff7043',
   display: 'flex',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  padding: '4px 8px'
 };
 
 const logoContainer = {
   display: 'flex',
-  alignItems: 'flex-end',
-  padding: 10
+  alignItems: 'center',
+  padding: 6
 }
 
 class Header extends Component {

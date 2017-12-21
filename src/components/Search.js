@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+const searchForm = {
+  display: 'flex',
+  alignItems: 'center'
+}
+
+
 const searchBtn = {
   color: '#fff'
 }
@@ -17,7 +23,7 @@ class Search extends Component {
     } = this.props;
 
     return (
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={searchForm}>
         <input
           type='text'
           value={value}

@@ -81,7 +81,7 @@ exports[`Table has a valid snapshot 1`] = `
       }
     >
       <button
-        className="button-inline button-active"
+        className="button-inline"
         onClick={[Function]}
         type="button"
       >
@@ -91,7 +91,7 @@ exports[`Table has a valid snapshot 1`] = `
     <span
       style={
         Object {
-          "width": "30%",
+          "width": "10%",
         }
       }
     >
@@ -133,20 +133,12 @@ exports[`Table has a valid snapshot 1`] = `
         Points
       </button>
     </span>
-    <span
-      style={
-        Object {
-          "width": "10%",
-        }
-      }
-    >
-      Archive
-    </span>
   </div>
   <div
     className="table-row"
   >
     <span
+      className="title"
       style={
         Object {
           "width": "40%",
@@ -162,7 +154,7 @@ exports[`Table has a valid snapshot 1`] = `
     <span
       style={
         Object {
-          "width": "30%",
+          "width": "10%",
         }
       }
     >
@@ -175,7 +167,11 @@ exports[`Table has a valid snapshot 1`] = `
         }
       }
     >
-      1
+      <a
+        href="https://news.ycombinator.com/item?id=y"
+      >
+        1
+      </a>
     </span>
     <span
       style={
@@ -186,26 +182,12 @@ exports[`Table has a valid snapshot 1`] = `
     >
       2
     </span>
-    <span
-      style={
-        Object {
-          "width": "10%",
-        }
-      }
-    >
-      <button
-        className="button-inline"
-        onClick={[Function]}
-        type="button"
-      >
-        Dismiss
-      </button>
-    </span>
   </div>
   <div
     className="table-row"
   >
     <span
+      className="title"
       style={
         Object {
           "width": "40%",
@@ -221,24 +203,6 @@ exports[`Table has a valid snapshot 1`] = `
     <span
       style={
         Object {
-          "width": "30%",
-        }
-      }
-    >
-      2
-    </span>
-    <span
-      style={
-        Object {
-          "width": "10%",
-        }
-      }
-    >
-      1
-    </span>
-    <span
-      style={
-        Object {
           "width": "10%",
         }
       }
@@ -252,13 +216,20 @@ exports[`Table has a valid snapshot 1`] = `
         }
       }
     >
-      <button
-        className="button-inline"
-        onClick={[Function]}
-        type="button"
+      <a
+        href="https://news.ycombinator.com/item?id=z"
       >
-        Dismiss
-      </button>
+        1
+      </a>
+    </span>
+    <span
+      style={
+        Object {
+          "width": "10%",
+        }
+      }
+    >
+      2
     </span>
   </div>
 </div>

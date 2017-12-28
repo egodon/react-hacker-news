@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from './Button';
+import { Sort } from './Sort';
 import PropTypes from 'prop-types';
 import { sortBy } from 'lodash';
-import classNames from 'classnames';
 
 
 const largeColumn = {
@@ -16,31 +15,10 @@ const smallColumn = {
 const SORTS = {
   NONE: list => list,
   TITLE: list => sortBy(list, 'title'),
-  AUTHOR: list => sortBy(list, 'author'),
+  AUTHOR: list => sortBy(list, [l => l.author.toLowerCase()]),
   COMMENTS: list => sortBy(list, 'num_comments').reverse(),
   POINTS: list => sortBy(list, 'points').reverse(),
 }
-
-const Sort = ({
-  sortKey,
-  activeSortKey,
-  onSort,
-  children 
-}) => {
-  const sortClass = classNames(
-    'button-inline',
-    { 'button-active': sortKey === activeSortKey }
-  );
-
-  return (
-    <Button
-      onClick={() => onSort(sortKey)}
-      className={sortClass}
-    >
-      {children}
-    </Button>
-  )
-};
 
 class Table extends Component {
   constructor(props) {
@@ -80,6 +58,7 @@ class Table extends Component {
               sortKey={'TITLE'}
               onSort={this.onSort}
               activeSortKey={sortKey}
+              isSortReverse={isSortReverse}
             >
               Title
             </Sort>
@@ -89,6 +68,7 @@ class Table extends Component {
               sortKey={'AUTHOR'}
               onSort={this.onSort}
               activeSortKey={sortKey}
+              isSortReverse={isSortReverse}              
             >
               Author
             </Sort>
@@ -98,6 +78,7 @@ class Table extends Component {
               sortKey={'COMMENTS'}
               onSort={this.onSort}
               activeSortKey={sortKey}
+              isSortReverse={isSortReverse}              
             >
               Comments
             </Sort>
@@ -107,13 +88,11 @@ class Table extends Component {
               sortKey={'POINTS'}
               onSort={this.onSort}
               activeSortKey={sortKey}
+              isSortReverse={isSortReverse}              
             >
               Points
             </Sort>
           </span>
-          {/* <span style={ smallColumn }>
-            Archive
-          </span> */}
         </div>
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">

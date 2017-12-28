@@ -14,7 +14,7 @@ import {
   PARAM_PAGE,
   PARAM_HPP,
   PATH_TAGS,
-  } from './constants';
+  } from './api/constants';
 
 const updateSearchTopStoriesState = (hits, page) => (prevState) => {
   const { searchKey, results } = prevState;
@@ -162,7 +162,7 @@ const Loading = () => (
 const withLoading = (Component) => ({ isLoading, ...rest }) => (
   isLoading
   ? <Loading />
-  : <Component { ...rest } /> 
+  : <Component { ...rest } className="button-more"/> 
 );
 
 const ButtonWithLoading = withLoading(Button);
